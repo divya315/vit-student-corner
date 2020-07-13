@@ -1,0 +1,263 @@
+/******************** Adding font  **********************/
+
+@font-face
+{
+	font-family:'racing sans one';
+	src:url("RacingSansOne-Regular.ttf");
+}
+
+		/******************** body  **********************/
+
+body{
+	width:100%;
+	padding:0;
+	margin:0;
+	background:#fff;
+	color:#3f3f3f;
+	font:14px/25px Arial;
+}
+*{
+	box-sizing:border-box;
+}
+
+
+		/************header*****************/
+		
+header{
+	background:#C0C0C0;
+	position: relative;
+
+}
+
+		/******************** logo  **********************/
+
+header .logo img{
+	display:inline-block;
+	margin:0px auto;
+	padding:10px;
+	max-width:250px;
+	
+}
+
+		/******************** navigation bar **********************/
+
+.menu{
+	display:inline-block;
+	float:right;
+}
+ul,ol{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.menu ul li{
+	float:left;
+}
+.menu ul li a{
+	padding:55px 17px;
+	letter-spacing:2px;
+	text-decoration:none;
+	color:#333;
+	font-weight:500px;
+	border:0;
+	text-transform:uppercase;
+	line-height:1;
+	display:block;
+	position:relative;
+	box-sizing:border-box;
+
+}
+.menu ul li:hover a{
+	background:#f3542d;
+	color:#fff;
+	background-size: auto;  
+	height: auto;
+}
+
+.slider{
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	height:120px;
+	
+}
+.caption{
+	display:block;
+	position:relative;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:2;
+	text-shadow:none;
+	color:#fff;
+	background:rgba(0,0,0, 0.7);
+	padding:30px 20px 10px;
+	text-align:center;
+	margin:0;
+	max-width:none;
+	
+}
+.caption h1{
+	font-size:40px;
+	margin-bottom:20px;
+}
+
+/**********************content***********************/
+
+.content-box{
+	margin-bottom:30px;
+}
+.content-box .box-1{
+	padding-bottom:30px;
+	min-height:380px;
+}
+
+
+
+.header{
+	text-align:center;
+	margin:60px auto 50px;
+}
+.heading{
+	background:#000;
+	border-right:6px solid #f3542d;
+	color:#fff;
+	display:inline-block;
+	font-size:36px;
+	font-weight:normal;
+	height:60px;
+	line-height:42px;
+	padding:10px 20px;
+	position:relative;
+	text-transform:uppercase;
+	transform:rotate(0deg) scale(1.003) skew(-14deg) translate(0px);
+	transform-style:flat;
+}
+.heading span{
+	display:block;
+transform:rotate(0deg) scale(1.003) skew(14deg) translate(0px);
+	transform-style:flat;
+
+}
+.heading2
+{
+	color:#fff;
+	display:inline-block;
+	font-size:16px;
+	font-weight:normal;
+	height:40px;
+	line-height:22px;
+	padding:10px 20px;
+	position:relative;
+	text-transform:uppercase;
+
+}
+
+			/*********************  ***********************/
+
+.content-box .item{padding:10px 0;}
+.zoom-container{
+	position:relative;
+	overflow:hidden;
+	display:inline-block;
+	width:100% !important;
+}
+
+.content-box .item img{
+	display:block;
+	width:100% !important;
+	height:300px;
+	transition:all 0.6s ease;
+}
+.content-box .item .item-content
+{
+	background:#fff;
+	padding:25px;
+	border:1px solid #ddd;
+	height:350px;
+
+}
+.content-box .item span{
+	font-size:15px;
+	font-weight:500px;
+	color:#000;
+	text-indent: 5%;
+	text-align: justify;
+}
+.content-box .item:hover .zoom-container img{
+	transform:scale(1.25) rotate(5deg);
+	
+}
+.content-box .item:hover .item-content{background:#f3542d;color:#fff;transition:all 600ms ease;}
+.content-box .item:hover .item-content p, .content-box .item:hover .item-content span{color:#fff;}
+.content-box .item:hover a.btn{color:#fff; border-color:#fff;} 
+
+			/*********************  ***********************/
+.content-box.box-4{
+	background:url(../images/bg-3.jpg) fixed 0 0;
+	min-height:380px;
+	padding:40px 0;
+	text-align:center;
+}
+
+		
+
+div,span,img{
+	vertical-align:top;
+}
+
+			
+
+a{color:#ff970b; text-decoration:none;vertical-align:top;}
+a:hover{text-decoration:underline;}
+
+.btn{
+	border:3px solid #d2583e;
+	border-radius:3px;
+	display:inline-block;
+	font-size:14px;
+	font-family:'Racing sans one';
+	line-height:1.4;
+	margin-bottom:0;
+	padding:6px 12px;
+	text-align:center;
+	transform:rotate(0deg) scale(1.003) skew(-14deg) translate(0px);
+	vertical-align:top;
+	white-space:nowrap;
+}
+
+footer{
+	margin-top:40px;
+	background:#f3542d;
+}
+footer a{
+	color:#fff;
+}
+
+
+
+			
+			
+p{
+	padding:5px;
+	margin:10px 0;
+	color:#777;
+}
+h1,h2,h3,h4,h5{
+	margin:0;
+	padding:0;
+}
+
+h1,h2{font-size:25px;line-height:25px;}
+h3,h4{font-size:20px;line-height:20px;}
+h5{font-size:16px;line-height:16px;}
+
+		
+.clearfix:after, .clearfix:before, article:after, article:before, .widget:after, .widget:before, .order:after, .order:before{
+	clear:both;
+	content:" ";
+	display:block;
+	visibility:hidden;
+	width:0;
+	height:0;
+}

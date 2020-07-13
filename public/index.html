@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login Form</title>
+		<style>
+		.login-form {
+			width: 300px;
+			margin: 0 auto;
+			font-family:sans-serif;
+		}
+		.login-form h1 {
+			text-align: center;
+			color: #4d4d4d;
+			font-size: 24px;
+			padding: 20px 0 20px 0;
+		}
+		.login-form input[type="password"],
+		.login-form input[type="text"] {
+			width: 100%;
+			padding: 15px;
+			border: 1px solid #dddddd;
+			margin-bottom: 15px;
+			box-sizing:border-box;
+		}
+		.login-form input[type="submit"] {
+			width: 100%;
+			padding: 15px;
+			background-color: #535b63;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			font-weight: bold;
+			color: #ffffff;
+		}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js"></script>
+		<script>
+		var app = angular.module("myApp",[]);
+
+		app.controller("control",function($scope, $http, $window){
+			function readCookie(name) {
+				var nameEQ = name + "=";
+				var ca = $window.document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+				}
+				return null;
+			}
+
+			if(readCookie('username')) {
+				$window.location.href='homepage.html';
+			}
+
+			$scope.login = function(email,pass){
+				if ((!email && !pass) || (email==="" || pass==="")){
+		      $window.alert("Login Failed. Please enter relevant items for authentication!");
+		    } else {
+		      $http({
+		        method: 'post',
+		        url: 'http://localhost:5000/log/login',
+		        data:{
+		          username: email,
+		          password: pass
+		        }
+		      })
+		      .then(function(response) {
+						if(response.status==202){
+							alert(response.data.message);
+						} else {
+							if($scope.remember){
+								var d = new Date();
+				        d.setTime(d.getTime() + (30*1000));
+				        var expires = "expires=" + d.toGMTString();
+				        $window.document.cookie = 'username=' + email + '; path=/; ' + expires;
+							}
+							$window.location.href='homepage.html';
+						}
+		      })
+				}
+			}
+
+			$scope.signUp = function(email, pass) {
+				if ((!email && !pass) || (email==="" || pass==="")){
+		      $window.alert("Login Failed. Please enter relevant items for authentication!");
+		    } else {
+		      $http({
+		        method: 'post',
+		        url: 'http://localhost:5000/log/signup',
+		        data:{
+		          username: email,
+		          password: pass
+		        }
+		      })
+		      .then(function(response) {
+						alert(response.data.message);
+					})
+				}
+			}
+		})
+		</script>
+	</head>
+	<body ng-app="myApp" ng-controller="control">
+		<div class="login-form">
+		<h1>Login Form</h1>
+		<input type="text" name="username" ng-model="username" placeholder="Username" required>
+		<input type="password" name="password" ng-model="password" placeholder="Password" required>
+		<input type="checkbox" name="remember" ng-model="remember">Remember Me <br><br>
+		<input type="submit" value="Login" ng-click="login(username,password)"><br><br>
+		<input type="submit" value="Sign Up" ng-click="signUp(username, password)">
+		</div>
+	</body>
+</html>

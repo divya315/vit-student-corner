@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI";
+}
+div {
+  display: inline-block;
+}
+.header {
+  background-color: #1abc9c;
+  position: absolute;
+  height: 15%;
+  width: 100%;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+}
+.title {
+  margin: 15px;
+}
+.navbar {
+  background-color: rgb(0,0,0,0.8);
+  position: absolute;
+  top: 15%;
+  height: 5%;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 5px 115px;
+  text-decoration: none;
+}
+.main {
+  position: absolute;
+  top: 20%;
+  height: 100%;
+  width: 100%;
+  background-color: #38A1F3;
+}
+.left, .right {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  height: 225px;
+  width: 400px;
+  box-shadow: 5px 5px rgb(0,0,0,0.2);
+  text-align: center;
+}
+.left {
+  margin: 20px 5px 5px 300px;
+}
+.right {
+  margin: 20px 0px 5px 0px;
+}

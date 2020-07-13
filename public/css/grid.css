@@ -1,0 +1,33 @@
+.container{
+	width:1200px;
+	position:relative;
+	margin:0px auto;
+	padding:0px;
+}
+.container:after{
+	content:" ";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.container .row:before, .row:after{
+	content:" ";
+	display:block;
+	overflow:hidden;
+	visibility:hidden;
+	width:0;
+	height:0;
+}
+.container .row:after{
+	clear:both;
+}
+.container .wrap-col{
+	margin:10px;
+}
+
+.container .adjust-1{
+	display:inline-block;
+	float:left;
+}
+.container .adjust-1{width:33.33%;}
